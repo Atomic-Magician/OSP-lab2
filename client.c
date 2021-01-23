@@ -35,9 +35,7 @@ int main(int argc, char **argv, char* env[])
     in_addr_t addr = inet_addr("127.0.0.1");
     int serv_port = 8080;
     time_t start_time = time(NULL), current_time;
-
     char buff[MAX];
-    //char * buff;
 
     if (getenv("L2ADDR"))
         addr = inet_addr(getenv("L2ADDR"));
@@ -45,7 +43,6 @@ int main(int argc, char **argv, char* env[])
     if (getenv("L2PORT"))
         serv_port = strtol(getenv("L2PORT"), NULL, 10);
 
-    //getopt, old friend
     int c;
     int digit_optind = 0;
     while ((c = getopt(argc, argv, "w:dl:a:p:vh")) != -1) {
@@ -66,7 +63,8 @@ int main(int argc, char **argv, char* env[])
                        "-a address. Default is 127.0.0.1 \n"
                        "-p port. The Default is 8080 \n"
                        "-v version \n"
-                       "-h this message \n");
+                       "-h this message \n"
+                       "\n==============\n");
                 break;
             case '?':
                 break;
