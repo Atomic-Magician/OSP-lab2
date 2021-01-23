@@ -81,7 +81,7 @@ int main(int argc, char **argv, char* env[])
 
     int c;
     int digit_optind = 0;
-    while ((c = getopt(argc, argv, "w:dl:a:p:vhc")) != -1) {
+    while ((c = getopt(argc, argv, "w:dl:a:p:vh")) != -1) {
         int this_option_optind = optind ? optind : 1;
         switch (c) {
             case 'l':
