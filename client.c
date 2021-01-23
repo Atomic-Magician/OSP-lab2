@@ -15,19 +15,6 @@
 
 char *version = "0.1";
 
-char correct_string (char * str) {
-    for (int i = 0; i < strlen(str) - 1; i++) {
-        //printf("%c\n", str[i]);
-        if (!isdigit(str[i]) && str[i] != '(' && str[i] != ')' && str[i] != '+' && str[i] != '-' && str[i] != '*' && str[i] != '/') {
-            //printf("return = %c\n", str[i]);
-            return str[i];
-        }
-
-    }
-    //printf("return = -1\n");
-    return -1;
-}
-
 int main(int argc, char **argv, char* env[])
 {
     int sockfd, connfd;
@@ -79,9 +66,6 @@ int main(int argc, char **argv, char* env[])
     if (optind < argc) {
         strcpy(buff, argv[optind]);
         printf("String: %s\n", buff);
-        if (correct_string(buff) != -1) {
-            printf("String '%s' is NOT correct\n Terminating...\n", buff);
-        }
 
     }
     // socket create and verification

@@ -324,7 +324,7 @@ void deamon(){
 }
 
 char correct_string (char * str) {
-    for (int i = 0; i < strlen(str) - 1; i++)
+    for (int i = 0; i < strlen(str); i++)
     if (!isdigit(str[i]) && str[i] != '(' && str[i] != ')' && str[i] != '+' && str[i] != '-' && str[i] != '*' && str[i] != '/')
             return str[i];
     return -1;
